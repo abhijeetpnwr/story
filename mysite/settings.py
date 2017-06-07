@@ -100,7 +100,7 @@ DATABASES = {
         'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
         'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
         'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
-        'PORT': '3306',
+        'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT'],
     }
 }
 
