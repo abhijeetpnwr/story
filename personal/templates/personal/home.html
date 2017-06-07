@@ -1,0 +1,29 @@
+{% extends "personal/header.html" %}
+{% block content %}
+<p>Hey! Welcome to my website! Well, I wasn't expecting guests. Um, My name is Abhijeet. I am a programmer.</p>
+{% include 'personal/includes/htmlsnippet.html' %}
+
+<div  style="margin-top:4%">
+	<div class="row masonry-container grid">
+		{% for post in object_list %}
+
+           {{loop.index}}
+		    <div class="col-sm-3">
+             <div class="thumbnail"> <img src="{{post.cover_loc}}" class="img-responsive" style="width: 100%;height:18em" alt="">
+              <div class="caption">
+                <strong><h3 style="font-size: 14px;line-height: 16px;padding-bottom: 10px;
+    letter-spacing: 1px;"> {{ loop.index }} {{post.story_title }}</h3></strong>
+                <p>{{post.brief}}   {{loop.index}} </p>
+                  <a href="personal/{{post.id}}" class="btn btn-primary" role="button"> Read Story </a>
+                  <i class="fa fa-eye" aria-hidden="true" style = "float: right; "> {{post.read_count}} </i>
+
+              </div>
+            </div>
+            </div>
+		{% endfor %}
+	</div>
+</div>
+
+
+
+{% endblock %}

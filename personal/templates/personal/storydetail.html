@@ -1,0 +1,43 @@
+{% extends "personal/header.html" %}
+
+ <!-- Bootstrap Core CSS -->
+{% load staticfiles %}
+
+
+
+
+
+{% block content %}
+<h2 class="page-header">{{ story.story_title }}
+    {% if not "unanonymous" in story.writer %}
+                    <small >  By {{ story.writer }}</small>
+    {% endif %}
+
+
+    {% if not "Unknown" in story.collection  %}
+                    <small >  <small style="float: right;">{{ story.collection }}<small></small>
+    {% endif %}
+
+</h2>
+
+<div>
+
+    <div class="paging-container"> </div>
+
+	<div class="row">
+
+  <div class="col-sm-12" id="contentdiv" style="margin-bottom:20px;font-size: 16px;line-height: 30px;font-weight: 400">
+      {{story_text|safe}}</div>
+    </div>
+
+    <br> <br> <br> <br>
+</div>
+
+<br><br>
+
+{% endblock %}
+
+
+
+
+
